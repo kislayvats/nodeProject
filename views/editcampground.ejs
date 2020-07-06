@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+<h1>Edit Campground</h1>
+<form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+<input type="text" name="camp[title]" value="<%= campground.title %>">
+<input type="text" name="camp[image]" value="<%= campground.image %>">
+<input type="text" name="camp[description]" value="<%= campground.description %>">
+<input type="number" name="camp[price]" value="<%= campground.price %>" min="1" step=".5">
+<button type="submit">Submit</button> 
+</form> 
+
+
+
+
+
+<%- include("partials/footer.ejs") %>

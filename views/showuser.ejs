@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+<img src="<%= user.avatar %>">
+<%= user.firstname %> <%= user.lastname %>
+
+<% campgrounds.forEach(function(camp){ %>
+    <div class="card" style="width: 18rem;display: inline-block;">
+        <img src="<%= camp.image %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= camp.title %></h5>
+          <a href="/campgrounds/<%= camp._id %>" class="btn btn-primary">View Camp</a>
+        </div>
+      </div>
+<% }) %>
+<%- include("partials/footer.ejs") %>

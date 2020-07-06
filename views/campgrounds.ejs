@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+<div class="jumbotron">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <a href="/register">Sign Up</a>
+    <a href="/login">Login</a>
+    <a class="btn btn-primary btn-lg" href="/campgrounds/new" role="button">Add Campground</a>
+  </div>
+
+<% campground.forEach(function(camp){ %>
+    <div class="card" style="width: 18rem;display: inline-block;">
+        <img src="<%= camp.image %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= camp.title %></h5>
+          <a href="/campgrounds/<%= camp._id %>" class="btn btn-primary">View Camp</a>
+        </div>
+      </div>
+<% }) %>
+
+  <%- include("partials/footer.ejs") %>
